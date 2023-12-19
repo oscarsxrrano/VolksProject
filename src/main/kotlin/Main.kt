@@ -1,29 +1,45 @@
+import java.util.*
+
 fun main() {
-    val funcionsVW = FuncionsVW()
-    val funcionsEntrada = FuncionsEntrada()
 
-    println("Benvingut a la calculadora de preus de Volkswagen Grand California!")
-    print("Introdueix el model ('normal' o 'fullEquip'): ")
-    val model = readLine()
+    val scanner = Scanner(System.`in`)
 
-    if (model != null) {
-        val preuBase = funcionsVW.calcularPreuBase(model)
+    // Menu del programa
+    menu()
+    println("La teva furgo es una Volkswagen Grand California, molt maca!")
 
-        print("Introdueix els quilòmetres recorreguts: ")
-        val quilometres = funcionsEntrada.llegirLong()
+    // Model Furgoneta
+    var fullEquip: Boolean = false
+    do {
+        print("Es la Camper Full Equip? ('true' o 'false'): ")
+        val modelFurgo: String = readln().lowercase(Locale.getDefault())
 
+        if (modelFurgo == "false")fullEquip=false
+        if (modelFurgo == "true")fullEquip=true
+
+    } while (modelFurgo !in listOf("true", "false"))
+
+
+
+
+    // Preguntem els quilometres recorreguts de la furgoneta
+    println("Quants quilometres correguts te la teva furgo?: ")
+    val kmFurgo: Int = scanner.nextInt()
+
+
+    // Preguntem l'estat dels pneumatics
+    var estatPneumatics: String
+    do {
         print("Introdueix l'estat dels pneumàtics ('menys5000', 'menys10000', '10000omés'): ")
-        val estatPneumatics = readLine()
+        estatPneumatics = scanner.nextLine()
+    } while (estatPneumatics !in listOf("menys5000", "menys10000", "10000omés"))
 
-        if (estatPneumatics != null) {
-            val preuActual = funcionsVW.calcularPreuActual(preuBase, quilometres, estatPneumatics)
+    // Resultats
+    val preuFurgonetaBase = calcularPreuBase(fullEquip)
+    val preuFurgonetaFinal = calcularPreuActual(preuFurgonetaBase, kmFurgo, estatPneumatics)
 
-            println("Preu base original de la furgo: $preuBase €")
-            println("Preu actual de la furgo: $preuActual €")
-        } else {
-            println("Estat dels pneumàtics no vàlid.")
-        }
-    } else {
-        println("Model no vàlid.")
-    }
+    println("Resultats!!!")
+    println("El preu BASE de la teva furgoneta es $preuFurgonetaBase!")
+    println("El preu FINAL de la teva furgoneta es $preuFurgonetaFinal!")
+
 }
