@@ -23,16 +23,23 @@ fun main() {
 
 
     // Preguntem els quilometres recorreguts de la furgoneta
-    println("Quants quilometres correguts te la teva furgo?: ")
-    val kmFurgo: Int = scanner.nextInt()
+    var kmFurgo: Int
 
+    do {
+        print("Quants quilòmetres correguts té la teva furgo?: ")
+        while (!scanner.hasNextInt()) {
+            println("Si us plau, introdueix un nombre vàlid. (No lletres!)")
+            scanner.next()
+        }
+        kmFurgo = scanner.nextInt()
+    } while (kmFurgo < 0)
 
     // Preguntem l'estat dels pneumatics
     var estatPneumatics: String
     do {
-        print("Introdueix l'estat dels pneumàtics ('menys5000', 'menys10000', '10000omés'): ")
-        estatPneumatics = scanner.nextLine()
-    } while (estatPneumatics !in listOf("menys5000", "menys10000", "10000omés"))
+        print("Introdueix l'estat dels pneumàtics. \nOpcions: ('horrible', 'millorable', 'be', 'molt be', 'perfecte'): ")
+        estatPneumatics = scanner.nextLine().lowercase(Locale.getDefault())
+    } while (estatPneumatics !in listOf("horrible", "millorable", "be", "molt be", "perfecte"))
 
     // Resultats
     val preuFurgonetaBase = calcularPreuBase(fullEquip)

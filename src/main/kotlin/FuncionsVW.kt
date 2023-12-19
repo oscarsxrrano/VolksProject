@@ -19,15 +19,12 @@ import java.util.*
         }
 
         // Descuento según el estado de los neumáticos
-        when (estatPneumatics) {
-
-            "Horrible" -> preuActual.toDouble()
-            "Millorable" -> preuActual.toDouble()
-            "Be" -> preuActual.toDouble()
+        return when (estatPneumatics) {
+            "Horrible" -> preuActual - 500.0
+            "Millorable" -> preuActual - 400.0
+            "Be" -> preuActual - 300.0
             "Molt be" -> preuActual - 200.0
-            "Perfecte" -> preuActual - 200.0
-            else -> preuActual - 300.0
+            "Perfecte" -> preuActual - 100.0
+            else -> preuActual
         }
-
-        return preuActual
     }
