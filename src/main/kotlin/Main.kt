@@ -18,7 +18,7 @@ fun main() {
         if (modelFurgo == "true")fullEquip=true
 
     } while (modelFurgo !in listOf("true", "false"))
-
+    println()
 
 
 
@@ -37,8 +37,9 @@ fun main() {
     // Preguntem l'estat dels pneumatics
     var estatPneumatics: String
     do {
+        println()
         print("Introdueix l'estat dels pneumàtics. \nOpcions: ('horrible', 'millorable', 'be', 'molt be', 'perfecte'): ")
-        estatPneumatics = scanner.nextLine().lowercase(Locale.getDefault())
+        estatPneumatics = readln().lowercase(Locale.getDefault())
     } while (estatPneumatics !in listOf("horrible", "millorable", "be", "molt be", "perfecte"))
 
     // Resultats
