@@ -20,6 +20,18 @@ fun main() {
     } while (modelFurgo !in listOf("true", "false"))
     println()
 
+    // Portabicis
+    var portabicis: Boolean = false
+    do {
+        print("La furgoneta te portabicis? ('true' o 'false'): ")
+        val biciSiONo: String = readln().lowercase(Locale.getDefault())
+
+        if (biciSiONo == "false")portabicis=false
+        if (biciSiONo == "true")portabicis=true
+
+    } while (biciSiONo !in listOf("true", "false"))
+    println()
+
 
 
     // Preguntem els quilometres recorreguts de la furgoneta
@@ -44,7 +56,7 @@ fun main() {
 
     // Resultats
     val preuFurgonetaBase = calcularPreuBase(fullEquip)
-    val preuFurgonetaFinal = calcularPreuActual(preuFurgonetaBase, kmFurgo, estatPneumatics)
+    val preuFurgonetaFinal = calcularPreuActual(preuFurgonetaBase, kmFurgo, estatPneumatics, portabicis)
 
     println("Resultats!!!")
     println("El preu BASE de la teva furgoneta es $preuFurgonetaBase!")

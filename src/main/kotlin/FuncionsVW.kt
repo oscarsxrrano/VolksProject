@@ -7,8 +7,14 @@ import java.util.*
         }
     }
 
-    fun calcularPreuActual(preuBase: Double, kmFurgo: Int, estatPneumatics: String): Double {
+    fun calcularPreuActual(preuBase: Double, kmFurgo: Int, estatPneumatics: String, portabicis: Boolean): Double {
         var preuActual: Double = preuBase
+
+        // Suma de valor amb portabicis
+        preuActual += when (portabicis) {
+            true -> 250
+            false -> 0
+        }
 
         // Depreciación por kilómetros
         when {
