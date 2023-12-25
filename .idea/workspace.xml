@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df7280cb-7e57-43c0-9195-8edf0d647e90" name="Changes" comment="- Final Exercici 5">
+    <list default="true" id="df7280cb-7e57-43c0-9195-8edf0d647e90" name="Changes" comment="- Portabicis">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/FuncionsExtras.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/FuncionsExtras.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/FuncionsVW.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/FuncionsVW.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
@@ -28,6 +30,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -91,7 +96,9 @@
       <updated>1702972268833</updated>
       <workItem from="1703284572956" duration="274000" />
       <workItem from="1703284860366" duration="2478000" />
-      <workItem from="1703351955677" duration="2592000" />
+      <workItem from="1703351955677" duration="2724000" />
+      <workItem from="1703450210366" duration="1839000" />
+      <workItem from="1703509529117" duration="9065000" />
     </task>
     <task id="LOCAL-00001" summary="Principi Projecte">
       <option name="closed" value="true" />
@@ -125,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703286719179</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Portabicis">
+      <option name="closed" value="true" />
+      <created>1703365959344</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703365959344</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +150,7 @@
     <MESSAGE value="Principi Projecte" />
     <MESSAGE value="- Principi Projecte&#10;- Casi Final Exercici 5" />
     <MESSAGE value="- Final Exercici 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Final Exercici 5" />
+    <MESSAGE value="- Portabicis" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Portabicis" />
   </component>
 </project>

@@ -32,18 +32,13 @@ fun main() {
     } while (biciSiONo !in listOf("true", "false"))
     println()
 
-
-
     // Preguntem els quilometres recorreguts de la furgoneta
     var kmFurgo: Int
 
     do {
-        print("Quants quilòmetres correguts té la teva furgo?: ")
-        while (!scanner.hasNextInt()) {
-            println("Si us plau, introdueix un nombre vàlid. (No lletres!)")
-            scanner.next()
-        }
-        kmFurgo = scanner.nextInt()
+        println("Quants quilòmetres correguts té la teva furgo?: ")
+        kmFurgo = llegirSoloNumero(scanner)
+
     } while (kmFurgo < 0)
 
     // Preguntem l'estat dels pneumatics
@@ -54,9 +49,21 @@ fun main() {
         estatPneumatics = readln().lowercase(Locale.getDefault())
     } while (estatPneumatics !in listOf("horrible", "millorable", "be", "molt be", "perfecte"))
 
+    // Anys de la furgoneta i altra perdua de valor depenent l'any
+    println()
+    var anysFurgo: Int
+
+    do {
+        println("Quants anys té la teva furgo?: ")
+        anysFurgo = llegirSoloNumero(scanner)
+
+    } while (anysFurgo < 0)
+
+
+
     // Resultats
     val preuFurgonetaBase = calcularPreuBase(fullEquip)
-    val preuFurgonetaFinal = calcularPreuActual(preuFurgonetaBase, kmFurgo, estatPneumatics, portabicis)
+    val preuFurgonetaFinal = calcularPreuActual(preuFurgonetaBase, kmFurgo, estatPneumatics, portabicis, anysFurgo)
 
     println("Resultats!!!")
     println("El preu BASE de la teva furgoneta es $preuFurgonetaBase!")

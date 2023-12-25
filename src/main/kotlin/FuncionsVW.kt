@@ -7,7 +7,7 @@ import java.util.*
         }
     }
 
-    fun calcularPreuActual(preuBase: Double, kmFurgo: Int, estatPneumatics: String, portabicis: Boolean): Double {
+    fun calcularPreuActual(preuBase: Double, kmFurgo: Int, estatPneumatics: String, portabicis: Boolean, anysFurgo: Int): Double {
         var preuActual: Double = preuBase
 
         // Suma de valor amb portabicis
@@ -16,7 +16,7 @@ import java.util.*
             false -> 0
         }
 
-        // Depreciación por kilómetros
+        // Depreciación por quilómetros
         when {
             kmFurgo in 0..5000 -> preuActual.toDouble()
             kmFurgo in 5000..10000 -> preuActual -= 200
@@ -32,6 +32,16 @@ import java.util.*
             "molt be" -> preuActual -= 200.0
             "perfecte" -> preuActual -= 100.0
         }
+
+        // Descuento extra segun la edad de la furgoneta y los quilometros
+        val perdidaPorEdad = when {
+            anysFurgo in 6..10 -> 0.0002
+            anysFurgo > 10 -> 0.0004
+            else -> 0.0
+        }
+
+        val perduaExtraKM = perdidaPorEdad * kmFurgo
+        preuActual = preuBase - preuBase * perduaExtraKM.toDouble()
 
         return preuActual
     }

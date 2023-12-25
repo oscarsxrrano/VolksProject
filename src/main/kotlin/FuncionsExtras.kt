@@ -42,3 +42,15 @@ fun menu(){
     println("Benvingut al programa")
     println("Aqui podràs saber el preu actual de la teva furgo!\n")
 }
+
+fun llegirSoloNumero(scanner: Scanner): Int {
+    while (true) {
+        val input = scanner.next()
+
+        try {
+            return input.toInt()
+        } catch (e: NumberFormatException) {
+            println("Si us plau, introdueix un nombre vàlid. (No lletres!)")
+        }
+    }
+}
