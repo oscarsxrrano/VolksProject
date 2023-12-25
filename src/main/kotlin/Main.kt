@@ -1,3 +1,4 @@
+import org.example.*
 import java.util.*
 
 fun main() {
@@ -5,13 +6,15 @@ fun main() {
     val scanner = Scanner(System.`in`)
 
     // Menu del programa
+    print(YELLOW_BOLD_BRIGHT + BLACK_BACKGROUND)
     menu()
-    println("La teva furgo es una Volkswagen Grand California, molt maca!")
-
+    print(RESET + YELLOW)
+    println("\nLa teva furgo es una Volkswagen Grand California, molt maca!")
+    print(RESET + YELLOW)
     // Model Furgoneta
     var fullEquip: Boolean = false
     do {
-        print("Es la Camper Full Equip? ('true' o 'false'): ")
+        print("Es la Camper Full Equip? " + CYAN_BOLD + CYAN_UNDERLINED + "('true' o 'false')" + YELLOW + ": ")
         val modelFurgo: String = readln().lowercase(Locale.getDefault())
 
         if (modelFurgo == "false")fullEquip=false
@@ -23,7 +26,7 @@ fun main() {
     // Portabicis
     var portabicis: Boolean = false
     do {
-        print("La furgoneta te portabicis? ('true' o 'false'): ")
+        print("La furgoneta te portabicis? " + CYAN_BOLD + CYAN_UNDERLINED + "('true' o 'false')" + YELLOW + ": ")
         val biciSiONo: String = readln().lowercase(Locale.getDefault())
 
         if (biciSiONo == "false")portabicis=false
@@ -36,7 +39,7 @@ fun main() {
     var kmFurgo: Int
 
     do {
-        println("Quants quilòmetres correguts té la teva furgo?: ")
+        print("Quants quilòmetres correguts té la teva furgo?: ")
         kmFurgo = llegirSoloNumero(scanner)
 
     } while (kmFurgo < 0)
@@ -45,7 +48,7 @@ fun main() {
     var estatPneumatics: String
     do {
         println()
-        print("Introdueix l'estat dels pneumàtics. \nOpcions: ('horrible', 'millorable', 'be', 'molt be', 'perfecte'): ")
+        print("Introdueix l'estat dels pneumàtics. \nOpcions: " + CYAN_BOLD + CYAN_UNDERLINED + "('horrible', 'millorable', 'be', 'molt be', 'perfecte')" + RESET + YELLOW + ": ")
         estatPneumatics = readln().lowercase(Locale.getDefault())
     } while (estatPneumatics !in listOf("horrible", "millorable", "be", "molt be", "perfecte"))
 
@@ -54,7 +57,7 @@ fun main() {
     var anysFurgo: Int
 
     do {
-        println("Quants anys té la teva furgo?: ")
+        print("Quants anys té la teva furgo?: ")
         anysFurgo = llegirSoloNumero(scanner)
 
     } while (anysFurgo < 0)
@@ -65,8 +68,8 @@ fun main() {
     val preuFurgonetaBase = calcularPreuBase(fullEquip)
     val preuFurgonetaFinal = calcularPreuActual(preuFurgonetaBase, kmFurgo, estatPneumatics, portabicis, anysFurgo)
 
-    println("Resultats!!!")
-    println("El preu BASE de la teva furgoneta es $preuFurgonetaBase!")
-    println("El preu FINAL de la teva furgoneta es $preuFurgonetaFinal!")
+    println("\n" + PURPLE_BOLD + "Resultats!!!")
+    println("El preu BASE de la teva furgoneta es " + GREEN_BOLD_BRIGHT + "$preuFurgonetaBase" + PURPLE_BOLD + "! ")
+    println("El preu FINAL de la teva furgoneta es " + GREEN_BOLD_BRIGHT + "$preuFurgonetaFinal" + PURPLE_BOLD + "! ")
 
 }

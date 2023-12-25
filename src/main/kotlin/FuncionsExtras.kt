@@ -1,3 +1,7 @@
+import org.example.CYAN_BOLD
+import org.example.CYAN_UNDERLINED
+import org.example.RED_BOLD
+import org.example.YELLOW
 import java.util.*
 
 fun calcPerc(pTotal : Int, pNoies : Int, pNois : Int) : Array<Float>{
@@ -22,12 +26,12 @@ fun readInt(pMessage : String, pMin : Int, pMax : Int) : Int{
         correctType = scan.hasNextInt()
 
         if(!correctType){
-            println("ERROR")
+            println(RED_BOLD + "ERROR" + YELLOW)
         }else{
             valor = scan.nextInt()
 
             if(valor < pMin || valor > pMax){
-                println("ERROR")
+                println(RED_BOLD + "ERROR" + YELLOW)
                 correctType = false
             }
         }
@@ -39,8 +43,10 @@ fun readInt(pMessage : String, pMin : Int, pMax : Int) : Int{
 }
 
 fun menu(){
+
     println("Benvingut al programa")
-    println("Aqui podràs saber el preu actual de la teva furgo!\n")
+    println("Aqui podràs saber el preu actual de la teva furgo!")
+    ascii()
 }
 
 fun llegirSoloNumero(scanner: Scanner): Int {
@@ -50,7 +56,18 @@ fun llegirSoloNumero(scanner: Scanner): Int {
         try {
             return input.toInt()
         } catch (e: NumberFormatException) {
-            println("Si us plau, introdueix un nombre vàlid. (No lletres!)")
+            print("Si us plau, introdueix un nombre vàlid. " + CYAN_BOLD + CYAN_UNDERLINED + "(No lletres!)" + YELLOW + ": ")
         }
     }
+}
+
+fun ascii() {
+    println(
+        CYAN_BOLD +  " ____  ______ _   ___      _______ _   _  _____ _    _ _______ _____ \n" +
+            "|  _ \\|  ____| \\ | \\ \\    / /_   _| \\ | |/ ____| |  | |__   __/ ____|\n" +
+            "| |_) | |__  |  \\| |\\ \\  / /  | | |  \\| | |  __| |  | |  | | | (___  \n" +
+            "|  _ <|  __| | . ` | \\ \\/ /   | | | . ` | | |_ | |  | |  | |  \\___ \\ \n" +
+            "| |_) | |____| |\\  |  \\  /   _| |_| |\\  | |__| | |__| |  | |  ____) |\n" +
+            "|____/|______|_| \\_|   \\/   |_____|_| \\_|\\_____|\\____/   |_| |_____/ ")
+    print(YELLOW)
 }
