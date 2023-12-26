@@ -9,7 +9,6 @@ import org.example.*
 import java.util.*
 
 fun main() {
-
     val scanner = Scanner(System.`in`)
 
     // Menu del programa
@@ -119,5 +118,4 @@ fun main() {
     println("\n" + PURPLE_BOLD + "Resultats!!!")
     println("El preu BASE de la teva furgoneta es " + GREEN_BOLD_BRIGHT + "$preuFurgonetaBase" + PURPLE_BOLD + "! ")
     println("El preu FINAL de la teva furgoneta es " + GREEN_BOLD_BRIGHT + "$preuFurgonetaFinal" + PURPLE_BOLD + "! ")
-
 }
