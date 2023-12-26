@@ -4,6 +4,7 @@ import org.example.RED_BOLD
 import org.example.YELLOW
 import java.util.*
 
+
 fun menu(){
 
     println("Benvingut al programa")
